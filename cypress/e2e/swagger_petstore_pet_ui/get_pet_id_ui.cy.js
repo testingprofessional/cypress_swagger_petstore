@@ -1,5 +1,5 @@
 beforeEach(() => {
-  cy.visit('/')
+  cy.visit('#/')
 })
 
 describe('GET query: Find pet by id', () => {
