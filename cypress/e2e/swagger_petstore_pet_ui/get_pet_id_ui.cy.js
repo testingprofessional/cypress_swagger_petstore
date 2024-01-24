@@ -14,7 +14,6 @@ describe('GET query: Find pet by id', () => {
     //Axe check whole page
     cy.checkA11y()
 
-
     cy.get('.parameters-col_description > input').type('1');
     cy.get('.execute-wrapper > .btn').click();
     cy.screenshot();
