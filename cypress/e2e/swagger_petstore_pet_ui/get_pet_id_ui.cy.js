@@ -10,9 +10,7 @@ describe('GET query: Find pet by id', () => {
     cy.get('.execute-wrapper > .btn').click();
 
     cy.get('[data-code="200"] > .response-col_description > .response-col_description__inner > .markdown > p').invoke('text').then((markdownText) => {
-
       const expectedMArkdownText = 'successful operation';
-
       expect(markdownText.trim()).to.equal(expectedMArkdownText.trim());
     });
   });
@@ -24,9 +22,7 @@ describe('GET query: Find pet by id', () => {
     cy.get('.execute-wrapper > .btn').click();
 
     cy.get('.response-col_description > .markdown > p').invoke('text').then((markdownText) => {
-
       const expectedMArkdownText = 'Error: Not Found';
-
       expect(markdownText.trim()).to.equal(expectedMArkdownText.trim());
     });
   });
