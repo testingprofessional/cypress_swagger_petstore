@@ -8,6 +8,7 @@ describe('GET query: Find pet by id', () => {
     cy.get('.try-out > .btn').click();
     cy.get('.parameters-col_description > input').type('1');
     cy.get('.execute-wrapper > .btn').click();
+    cy.screenshot();
 
     cy.get('[data-code="200"] > .response-col_description > .response-col_description__inner > .markdown > p').invoke('text').then((markdownText) => {
       const expectedMarkdownText = 'successful operation';
@@ -20,7 +21,8 @@ describe('GET query: Find pet by id', () => {
     cy.get('.try-out > .btn').click();
     cy.get('.parameters-col_description > input').type('1111111');
     cy.get('.execute-wrapper > .btn').click();
-
+    cy.screenshot();
+    
     cy.get('.response-col_description > .markdown > p').invoke('text').then((markdownText) => {
       const expectedMarkdownText = 'Error: Not Found';
       expect(markdownText.trim()).to.equal(expectedMarkdownText.trim());
